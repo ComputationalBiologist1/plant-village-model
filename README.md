@@ -89,7 +89,7 @@ Deep Learning Project/
     ├── requirements.txt                # Minimal production testing dependencies
     ├── README.md                       # Part 2 usage & quickstart guide
     ├── models/                         # Quantized FP16 checkpoints (<65 MB each, direct push safe)
-    │   ├── weights_se_block_fp16.pth   # Champion Model (ResNet-50 + SE-Block Attention)
+    │   ├── weights_se_block_fp16.pth   # Champion Model (ConvNeXt-Tiny + SE-Block Attention)
     │   ├── weights_conv_bn_relu_fp16.pth # Baseline Model (Conv-BN-ReLU)
     │   ├── weights_cbam_fp16.pth       # CBAM Model (Channel & Spatial Attention)
     │   └── plant_disease_model_fp16.pth# Production Streamlit weights

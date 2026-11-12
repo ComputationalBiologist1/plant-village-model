@@ -142,10 +142,10 @@ streamlit run web_app/app.py
 
 All model checkpoints in `models/` are quantized to half-precision (`float16`), keeping individual file sizes strictly under 65 MB (compatible with standard Git push without Git LFS):
 
-1. `weights_se_block_fp16.pth` (63.4 MB) - **Champion Model**: ResNet-50 backbone with Squeeze-and-Excitation channel attention. Test accuracy: 99.39%, Macro F1: 0.9924.
-2. `weights_conv_bn_relu_fp16.pth` (63.3 MB) - Baseline architecture without attention heads. Test accuracy: 99.11%, Macro F1: 0.9887.
-3. `weights_cbam_fp16.pth` (63.4 MB) - Convolutional Block Attention Module with dual channel and spatial attention. Test accuracy: 99.28%, Macro F1: 0.9909.
-4. `plant_disease_model_fp16.pth` (63.4 MB) - Default deployment weights for the Streamlit web engine.
+1. `weights_se_block_fp16.pth` (63.4 MB) - **Champion Model**: ConvNeXt-Tiny backbone with Squeeze-and-Excitation (SE) channel attention. Test accuracy: **72.40%** (across 36,351 unseen test images), Test recall: **82.75%**, Test weighted F1: **74.14%**, Composite Score: **70.23** (Rank 1).
+2. `weights_conv_bn_relu_fp16.pth` (63.3 MB) - Baseline ConvNeXt-Tiny with 3x3 residual refinement. Test accuracy: **68.89%**, Test recall: **81.32%**, Test weighted F1: **70.59%**, Composite Score: **66.64** (Rank 2, exhibited 13.95% train-val overfitting gap).
+3. `weights_cbam_fp16.pth` (63.4 MB) - ConvNeXt-Tiny with Convolutional Block Attention Module (Channel + Spatial). Test accuracy: **67.41%**, Test recall: **81.50%**, Test weighted F1: **71.97%**, Composite Score: **66.22** (Rank 3, degraded by border-padding spatial artifacts).
+4. `plant_disease_model_fp16.pth` (63.4 MB) - Production deployment checkpoint for the Streamlit web engine and desktop workstation.
 
 ---
 

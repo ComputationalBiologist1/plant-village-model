@@ -41,6 +41,24 @@ The PhytoScan Diagnostic Workstation is designed as an industrial laboratory ins
 - **Clinical Report Export**: Export structured diagnostic reports in standard `.JSON` or `.TXT` formats with one click.
 - **Cross-Platform OS Engine**: Razor-sharp typography on macOS (`SF Pro`), Windows (`Segoe UI`), and Linux (`Inter` / `DejaVu Sans`). High-DPI aware with cross-platform trackpad/mousewheel scrolling.
 
+---
+
+### Provenance and Sourcing of Clinical Treatment Protocols
+
+Where do the recommended treatment steps come from?
+All agronomic protocols in PhytoScan are **100% deterministic and pre-compiled locally** (located in `CLINICAL_TREATMENT_PROTOCOLS` inside `plantguard_app.py` and `classify_leaf.py`). They do **not** originate from an LLM, generative API, or online query, eliminating chemical hallucination risks.
+
+The recommendations are systematically indexed from three established agronomic authorities:
+1. **FRAC (Fungicide Resistance Action Committee)**:
+   - Chemical fungicides are classified by Mode of Action (MoA) groups.
+   - Rotational programs enforce alternation between multi-site contact protectants (**FRAC M05** Chlorothalonil, **FRAC M01** Copper) and targeted systemic fungicides (**FRAC 11** Strobilurins, **FRAC 3** Triazoles) to suppress fungal resistance buildup.
+2. **IRAC (Insecticide Resistance Action Committee)**:
+   - For viral infections without direct chemical cures (e.g., Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus), protocols specify targeted vector suppression of whiteflies (*Bemisia tabaci*) and thrips using **IRAC 4A** and **IRAC 28** chemistries alongside biological controls (*Beauveria bassiana*).
+3. **EPPO & University Extension IPM Guidelines**:
+   - Sanitation thresholds, thermal seed therapy (e.g., 50°C for 25 minutes for *Xanthomonas*), and non-solanaceous crop rotations (2-to-3 years) are compiled from peer-reviewed agricultural extension guidelines (UC Davis IPM, Cornell Cooperative Extension, Penn State Plant Pathology).
+
+When a specimen is diagnosed, the workstation maps the predicted class index to its verified clinical record in $O(1)$ constant time, ensuring reproducible, lab-grade advice with zero network dependencies.
+
 ### Launching the Desktop Workstation
 
 #### macOS / Linux:

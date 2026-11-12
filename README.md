@@ -119,9 +119,9 @@ In addition to the Streamlit web app and CLI tools, this repository includes **P
   8. `No. 94 · Pine Needle & Smoked Bamboo (松葉と煤竹)`
 * **Dual Menu Switching:** Seamlessly switch between palettes using the native OS menu bar (`Color Palette`) or the in-window dropdown menu. All surfaces, circular confidence dials, and distribution progress bars re-render dynamically.
 * **Authentic Industrial Interface:** Clean, structured Swiss-Grid layout with zero artificial AI tropes, no double slashes, no fake telemetry, and native system typography (`SF Pro` on macOS, `Segoe UI` on Windows, `Inter` on Linux).
-* **Deterministic Agronomic Care Guidelines:** Structured 3-column guidelines covering:
+* **Deterministic Agronomic Care Guidelines:** Sourced from an integrated, pre-compiled clinical database mapped to international standards (**FRAC**, **IRAC**, **EPPO**, and University Extension IPM bulletins) rather than generative AI models. Structured into a 3-column clinical matrix:
   1. Cultural Management & Sanitation
-  2. Biological & Chemical Options (FRAC / IRAC standards)
+  2. Biological & Chemical Options (FRAC / IRAC indexed rotational chemistry)
   3. Vector Exclusion & Crop Rotation
 * **Cross-Platform & Offline:** Runs locally without GPU requirements, auto-detecting Apple Silicon Metal (MPS), NVIDIA CUDA, or Multicore CPU.
 

@@ -644,12 +644,36 @@ The workstation embeds eight authentic Japanese color harmonies:
 - **Dynamic Live Re-Rendering:** Changing palettes updates the root frame, cards, buttons, vector dials (`PrecisionRadialGauge`), and probability bars (`PrecisionProgressBar`) instantaneously without requiring model re-inference.
 
 ### 8.7 Deterministic Agronomic Intervention & Care Protocol Engine
-Replacing opaque generative telemetry with verifiable agronomic science, PhytoScan integrates a deterministic clinical database covering all 15 Solanaceous conditions. Upon pathological identification, the system constructs a structured 3-column intervention matrix compliant with **FRAC (Fungicide Resistance Action Committee)** and **IRAC (Insecticide Resistance Action Committee)** standards:
-1. **Cultural Management & Sanitation:** Non-chemical pathogen containment (e.g., termination of overhead sprinkler irrigation, shear sterilization with 10% quaternary ammonium, crop debris deep-incorporation).
-2. **Biological & Chemical Interventions:** Targeted chemical treatments and bio-fungicides indexed with specific dilution rates, application intervals, and FRAC group rotational codes.
-3. **Vector Exclusion & Crop Rotation:** Host-free barrier netting, rotational schedules away from Solanaceae species, and biological vector management.
 
-Reports can be exported in one click to formatted `.txt` laboratory summaries or structured `.json` payloads.
+#### 8.7.1 Provenance and Regulatory Sourcing Standards
+A central design principle of the PhytoScan workstation is the complete rejection of generative AI, large language model (LLM) text generators, and live cloud telemetry for clinical treatment recommendations. In agronomic pathology and commercial crop protection, generative text models introduce unacceptable operational hazards:
+- **Hallucinated Dilution Ratios & Phytotoxicity:** LLMs frequently hallucinate application dosages or recommend active ingredients that cause chemical burning or crop death.
+- **Resistance Acceleration:** Misapplication of single-site fungicides without rotational partners accelerates genetic resistance mutations in fungal pathogens.
+- **Regulatory Non-Compliance:** Generative models can recommend restricted or banned active ingredients without verifying regional quarantine mandates.
+
+To establish authentic laboratory-grade reliability, all recommended interventions are sourced from a **Deterministic Pre-Compiled Clinical Agronomic Database** indexed across verified institutional standards:
+
+1. **FRAC (Fungicide Resistance Action Committee) Code Standards:**
+   - Chemical interventions specify active ingredients categorized by Mode of Action (MoA) groups.
+   - For fungal pathogens such as *Alternaria solani* (Early Blight) and *Phytophthora infestans* (Late Blight), protocols mandate strict alternation between multi-site contact protectants (**FRAC Group M05** Chlorothalonil, **FRAC Group M01** Copper Hydroxide) and systemic site-specific compounds (**FRAC Group 11** Strobilurins / Azoxystrobin, **FRAC Group 3** Triazoles / Difenoconazole, **FRAC Group 4** Phenylamides / Mefenoxam) to prevent target-site resistance selection.
+
+2. **IRAC (Insecticide Resistance Action Committee) Vector Guidelines:**
+   - Viral pathologies like Tomato Yellow Leaf Curl Virus (TYLCV) and Tomato Spotted Wilt Virus (TSWV) have no chemical cures once systemically established in plant vascular bundles.
+   - The clinical database indexes vector containment protocols targeting primary arthropod vectors: whiteflies (*Bemisia tabaci*) and thrips (*Frankliniella occidentalis*), specifying selective rotational chemistry (**IRAC Group 4A** Neonicotinoids, **IRAC Group 28** Diamides, and entomopathogenic fungi such as *Beauveria bassiana*).
+
+3. **EPPO (European and Mediterranean Plant Protection Organization) & University Extension IPM Guidelines:**
+   - Cultural sanitation measures, thermal seed therapies (e.g., precise 50°C hot-water soaking for 25 minutes to eradicate seed-borne *Xanthomonas campestris*), and non-solanaceous crop rotation intervals (minimum 2–3 year cycles away from *Capsicum*, *Solanum*, and *Lycopersicon*) are compiled from peer-reviewed integrated pest management (IPM) bulletins (UC Davis IPM, Cornell Cooperative Extension, and Penn State Plant Pathology).
+
+#### 8.7.2 Deterministic Protocol Dispatch Architecture
+When a specimen is evaluated, the neural network computes the discrete predicted class index $k \in \{0, \dots, 14\}$ with posterior confidence $P(y=k|\mathbf{x})$. 
+Rather than dispatching natural language prompts to an external API, the workstation executes a deterministic $O(1)$ dictionary lookup `CLINICAL_TREATMENT_PROTOCOLS[k]`.
+
+The resulting payload is parsed into a structured **3-Column Clinical Matrix**:
+1. **01 // Cultural Management & Sanitation:** Immediate non-chemical containment (e.g., transition from overhead sprinklers to sub-canopy drip irrigation, sterilization of harvesting tools in 10% quaternary ammonium, deep tillage of crop debris).
+2. **02 // Biological & Chemical Interventions (FRAC / IRAC Indexed):** Targeted fungicides, bactericides, or systemic acquired resistance (SAR) inducers (e.g., Acibenzolar-S-methyl) with explicit concentration rates and rotational intervals.
+3. **03 // Vector Exclusion & Preventative Rotation:** Host-free barrier netting (50-mesh physical exclusion), weed reservoir eradication (*Solanum nigrum*), and long-term crop rotation schedules.
+
+Reports can be exported in one click to formatted `.txt` laboratory summaries or structured `.json` payloads for direct integration into commercial LIMS software.
 
 ---
 

@@ -156,3 +156,13 @@ All model checkpoints in `models/` are quantized to half-precision (`float16`), 
 - **RAM**: 2 GB minimum (4 GB recommended)
 - **Disk Space**: ~300 MB for weights and runtime libraries
 - **GPU**: Optional (automatically uses NVIDIA CUDA or Apple Silicon MPS if available, falls back to CPU seamlessly).
+
+---
+
+## Author & Systems Contribution
+**Part 2 Lead**: Sankalp
+- Design and implementation of the **PhytoScan Diagnostic Workstation** CustomTkinter desktop interface.
+- Sanzo Wada traditional color palette integration and dynamic multi-menu switching.
+- Compilation and indexing of the deterministic clinical agronomic database (FRAC / IRAC / EPPO compliance).
+- Custom UI canvas engineering (anti-aliased radial gauge, animated probability distributions, report export).
+- Cross-platform runtime optimization, High-DPI scaling, and headless CLI classification engine.

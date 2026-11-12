@@ -375,6 +375,28 @@ git push -u origin main
 
 ---
 
+## Authors & Project Contributions
+
+This project was developed through a two-stage collaboration dividing model research and systems engineering:
+
+### Kush Bhattacharya (`@ComputationalBiologist1`)
+**Part 1: Model Training, Architecture Research, and Validation Pipeline**
+- Led the mathematical formulation, exploratory data analysis (EDA), and biophysical photometric profiling across 87,736 foliar specimens.
+- Designed and executed the strict perceptual hash deduplication protocol (`dHash`) establishing the zero data leakage split baseline.
+- Architected, trained, and benchmarked all three deep neural network variants (ConvNeXt-Tiny Baseline Conv-BN-ReLU, Squeeze-and-Excitation channel attention, and CBAM dual attention).
+- Engineered the training regularization regime: dynamic inverse-frequency class weighting, Mixup augmentation, label smoothing, AdamW differential learning rates, and cosine annealing schedules.
+- Conducted comparative quantitative evaluation across test accuracy (72.40%), recall (82.75%), weighted F1 (74.14%), loss convergence, and cross-split generalization stability.
+
+### Sankalp
+**Part 2: PhytoScan Desktop Workstation GUI, Clinical Database, and Deployment Infrastructure**
+- Engineered the complete **PhytoScan Diagnostic Workstation** desktop application using CustomTkinter with a Swiss-Grid laboratory instrument aesthetic.
+- Implemented the dynamic color management system featuring 8 traditional color harmonies referenced from Sanzo Wada's *A Dictionary of Color Combinations* with live dual-menu switching.
+- Authored and indexed the **Integrated Deterministic Clinical Agronomic Database** compliant with FRAC, IRAC, and EPPO standards, eliminating generative AI dependencies.
+- Designed the tactile interaction architecture: anti-aliased canvas radial confidence gauges, multi-model probability bars, and structured clinical report export engines (.JSON / .TXT).
+- Developed the cross-platform runtime engine (Apple Silicon MPS, NVIDIA CUDA, CPU fallback), OS-native font resolvers, High-DPI scaling, and headless CLI inference pipelines (`classify_leaf.py`).
+
+---
+
 ## Complete Technical Report
 For mathematical derivations, biophysical hypothesis tests, full hyperparameter schedules, and in-depth architectural analysis, refer to the full **[PROJECT_REPORT.md](file:///Users/kushrocks6306/Deep%20Learning%20Project/PROJECT_REPORT.md)**.
 

@@ -769,4 +769,26 @@ The launcher automatically discovers the local Python environment, verifies PyTo
 3. **Explainable AI (XAI) Saliency Maps:** Integrating in-browser Grad-CAM heatmaps into the Streamlit UI to highlight the exact leaf regions driving diagnostic predictions for agricultural extension workers.
 
 ---
+
+## 11. Authorship & Project Contributions
+
+This project was developed through a focused two-stage technical collaboration:
+
+### Kush Bhattacharya (`@ComputationalBiologist1`)
+**Part 1: Model Training, Architectural Research, and Empirical Validation**
+- Conceived the mathematical framing, exploratory data analysis (EDA), and biophysical photometric feature extraction across 87,736 plant leaf specimens.
+- Instituted the perceptual hash deduplication protocol (`dHash`, Hamming threshold <= 6) to eliminate near-duplicate specimens and guarantee strictly zero data leakage across train, validation, and test splits.
+- Designed, trained, and benchmarked all three deep neural network variants based on ConvNeXt-Tiny (Baseline Conv-BN-ReLU, Squeeze-and-Excitation channel attention, and CBAM dual attention).
+- Engineered the multi-phase training regularization framework: dynamic inverse-frequency class weighting, Mixup augmentation ($\alpha=0.3$), label smoothing (0.1), AdamW differential learning rates, and cosine annealing schedules.
+- Conducted comparative quantitative evaluation across test accuracy (72.40%), recall (82.75%), weighted F1 (74.14%), loss convergence, and cross-split generalization stability.
+
+### Sankalp
+**Part 2: Desktop Workstation GUI, Agronomic Care Database, and Deployment Systems**
+- Designed and engineered the **PhytoScan Diagnostic Workstation** desktop application using CustomTkinter, adhering to a Swiss-Grid laboratory instrument aesthetic.
+- Developed the traditional Japanese color palette architecture incorporating 8 curated color harmonies from Sanzo Wada's *A Dictionary of Color Combinations* with live dual-menu dynamic re-rendering.
+- Authored and indexed the **Deterministic Clinical Agronomic Database** compliant with FRAC (Fungicide Resistance Action Committee), IRAC (Insecticide Resistance Action Committee), and EPPO regulatory standards.
+- Engineered tactile interactive UI components: custom canvas anti-aliased radial confidence gauges, multi-model probability distribution bars, and clinical report export engines (.JSON / .TXT).
+- Developed the cross-platform runtime engine (Apple Silicon MPS, NVIDIA CUDA, CPU fallback), OS-native font resolvers, High-DPI scaling, and headless CLI inference pipelines (`classify_leaf.py`).
+
+---
 *Report compiled and validated by Deep Learning Research & Engineering Team. All datasets, weights, code, and logs are self-contained within this repository.*

@@ -93,3 +93,11 @@ Run the notebooks in sequential order:
 2. `CleanUp-TestSet.ipynb` - Perceptual hash deduplication audit.
 3. `EDA on PlantVillage.ipynb` - Exploratory analysis and photometric distribution profiling.
 4. `Models.ipynb` - Model training, loss curve tracking, and validation evaluation.
+
+---
+
+## Author & Research Contribution
+**Part 1 Lead**: Kush Bhattacharya (`@ComputationalBiologist1`)
+- Data engineering, perceptual hash deduplication (`dHash`), and zero-leakage split enforcement.
+- Exploratory data analysis, photometric channel distributions, and class imbalance compensation.
+- Deep neural network architecture design, model training (ConvNeXt-Tiny + Attention heads), regularization regimes, and quantitative validation benchmarks.

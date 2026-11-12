@@ -1,0 +1,16 @@
+class_name,crop,condition,is_healthy,image_count,dataset_pct,recommended_loss_weight,mean_kb,r_mean,g_mean,b_mean,brightness,contrast,excess_green_exg,sharpness,entropy
+Tomato__Tomato_YellowLeaf__Curl_Virus,Tomato,Tomato YellowLeaf  Curl Virus,False,2334,15.402,0.4328,8.17,113.96,122.45,90.34,116.25,32.76,0.1765,776.44,6.749
+Tomato_Late_blight,Tomato,Late blight,False,1542,10.176,0.6552,8.26,108.57,110.39,97.06,108.33,41.49,0.0816,1281.79,6.607
+Tomato_Septoria_leaf_spot,Tomato,Septoria leaf spot,False,1477,9.747,0.684,9.38,131.51,132.77,119.61,130.89,34.62,0.0714,1671.47,6.718
+Tomato_Bacterial_spot,Tomato,Bacterial spot,False,1202,7.932,0.8405,8.06,106.31,112.53,94.03,108.56,31.18,0.113,717.47,6.72
+Tomato_healthy,Tomato,healthy,True,1186,7.826,0.8518,10.34,114.71,118.37,110.07,116.33,34.18,0.0551,3265.89,6.832
+Tomato__Target_Spot,Tomato,Target Spot,False,1029,6.79,0.9818,10.07,118.39,119.46,111.72,118.26,42.13,0.0612,2372.0,7.171
+Pepper__bell___healthy,Pepper  bell,healthy,True,922,6.084,1.0957,9.27,123.59,135.42,113.59,129.39,44.02,0.1614,1703.55,7.125
+Tomato_Early_blight,Tomato,Early blight,False,886,5.847,1.1403,9.05,109.03,112.14,100.17,109.84,46.58,0.095,1492.13,7.195
+Potato___Early_blight,Potato,Early blight,False,876,5.781,1.1533,10.67,137.22,142.06,115.46,137.58,44.21,0.1069,2533.26,7.119
+Pepper__bell___Bacterial_spot,Pepper  bell,Bacterial spot,False,870,5.741,1.1612,9.94,119.28,122.31,98.56,118.7,48.5,0.1455,1974.99,7.135
+Tomato_Spider_mites_Two_spotted_spider_mite,Tomato,Spider mites Two spotted spider mite,False,867,5.721,1.1652,9.73,122.01,118.37,105.72,118.02,41.63,0.0662,2131.74,7.094
+Potato___Late_blight,Potato,Late blight,False,790,5.213,1.2788,9.19,118.17,119.31,104.19,117.24,36.64,0.0822,1493.78,6.969
+Tomato_Leaf_Mold,Tomato,Leaf Mold,False,743,4.903,1.3597,8.92,113.84,118.38,115.07,116.65,35.84,0.0566,1307.36,6.809
+Tomato__Tomato_mosaic_virus,Tomato,Tomato mosaic virus,False,302,1.993,3.3453,9.39,119.17,116.89,116.99,117.58,30.68,0.0342,1817.64,6.692
+Potato___healthy,Potato,healthy,True,128,0.845,7.8927,9.94,124.36,132.0,111.92,127.43,37.37,0.1332,2270.7,6.993

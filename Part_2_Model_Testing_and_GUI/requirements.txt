@@ -1,0 +1,8 @@
+# PHYTOSCAN DIAGNOSTIC WORKSTATION (v4.2-LIMS)
+# Minimal Production Runtime Dependencies
+# Installation: pip install -r requirements.txt
+
+torch>=2.0.0
+torchvision>=0.15.0
+pillow>=9.0.0
+customtkinter>=5.2.0

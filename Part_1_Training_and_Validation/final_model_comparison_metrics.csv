@@ -1,0 +1,4 @@
+Model,Val Loss,Val Acc (%),Val Macro-F1 (%),Test Loss,Test Acc (%),Test Precision (%),Test Recall (%),Test Macro-F1 (%),Test Weighted-F1 (%),Composite Score
+SE_Block,1.312,72.76,69.61,1.3223,72.4,68.37,82.75,69.45,74.14,70.23
+Conv_BN_ReLU,1.423,69.2,70.56,1.4339,68.89,71.06,81.32,70.53,70.59,66.64
+CBAM,1.3993,67.61,67.82,1.4054,67.41,67.79,81.5,67.64,71.97,66.22

@@ -1,0 +1,4 @@
+Model,Train Acc @ Best (%),Train-Val Gap (%),Val-Test F1 Shift (%),Val-Test Acc Shift (%),Best Epoch,Total Epochs Run,Trainable Params,Feature Weight Mean,Feature Weight Std
+Conv_BN_ReLU,83.15,13.95,0.03,0.31,16,50,"33,140,079",0.01458,0.00255
+SE_Block,76.29,3.53,0.16,0.36,14,50,"33,213,807",0.02276,0.00395
+CBAM,76.45,8.84,0.18,0.2,12,50,"33,213,905",0.02336,0.00415

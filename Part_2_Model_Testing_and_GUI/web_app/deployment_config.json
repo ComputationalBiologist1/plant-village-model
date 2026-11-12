@@ -1,0 +1,124 @@
+{
+  "selected_model_architecture": "SE_Block",
+  "img_size": 128,
+  "normalization_mean": [
+    0.4652,
+    0.4788,
+    0.4193
+  ],
+  "normalization_std": [
+    0.1878,
+    0.1648,
+    0.2032
+  ],
+  "num_classes": 15,
+  "test_accuracy_pct": 72.4,
+  "test_macro_f1_pct": 69.45,
+  "classes": {
+    "0": {
+      "raw_class": "Pepper__bell___Bacterial_spot",
+      "plant": "Pepper  Bell",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Bacterial Spot"
+    },
+    "1": {
+      "raw_class": "Pepper__bell___healthy",
+      "plant": "Pepper  Bell",
+      "is_diseased": false,
+      "health_status": "Healthy",
+      "diagnosis": "Healthy (No Disease)"
+    },
+    "2": {
+      "raw_class": "Potato___Early_blight",
+      "plant": "Potato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Early Blight"
+    },
+    "3": {
+      "raw_class": "Potato___healthy",
+      "plant": "Potato",
+      "is_diseased": false,
+      "health_status": "Healthy",
+      "diagnosis": "Healthy (No Disease)"
+    },
+    "4": {
+      "raw_class": "Potato___Late_blight",
+      "plant": "Potato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Late Blight"
+    },
+    "5": {
+      "raw_class": "Tomato__Target_Spot",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Target Spot"
+    },
+    "6": {
+      "raw_class": "Tomato__Tomato_mosaic_virus",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Tomato Mosaic Virus"
+    },
+    "7": {
+      "raw_class": "Tomato__Tomato_YellowLeaf__Curl_Virus",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Tomato Yellowleaf  Curl Virus"
+    },
+    "8": {
+      "raw_class": "Tomato_Bacterial_spot",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Bacterial Spot"
+    },
+    "9": {
+      "raw_class": "Tomato_Early_blight",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Early Blight"
+    },
+    "10": {
+      "raw_class": "Tomato_healthy",
+      "plant": "Tomato",
+      "is_diseased": false,
+      "health_status": "Healthy",
+      "diagnosis": "Healthy (No Disease)"
+    },
+    "11": {
+      "raw_class": "Tomato_Late_blight",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Late Blight"
+    },
+    "12": {
+      "raw_class": "Tomato_Leaf_Mold",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Leaf Mold"
+    },
+    "13": {
+      "raw_class": "Tomato_Septoria_leaf_spot",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Septoria Leaf Spot"
+    },
+    "14": {
+      "raw_class": "Tomato_Spider_mites_Two_spotted_spider_mite",
+      "plant": "Tomato",
+      "is_diseased": true,
+      "health_status": "Diseased",
+      "diagnosis": "Spider Mites Two Spotted Spider Mite"
+    }
+  }
+}

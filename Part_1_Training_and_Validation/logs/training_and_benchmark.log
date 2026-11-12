@@ -1,0 +1,400 @@
+Loading notebook for MAX POWER execution: C:\Users\Purahan\Downloads\Proccessed Dataset\Models.ipynb
+Launching ConvNeXt-Tiny pipeline (50 Epochs / Model) across all cells on GPU + Multi-Core CPU...
+C:\Users\Purahan\AppData\Roaming\Python\Python314\site-packages\zmq\_future.py:718: RuntimeWarning: Proactor event loop does not implement add_reader family of methods required for zmq. Registering an additional selector thread for add_reader support via tornado. Use `asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())` to avoid this warning.
+  self._get_loop()
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+GPU Active: NVIDIA GeForce RTX 4050 Laptop GPU (6.00 GB Dedicated VRAM) | FP16 Mixed Precision: Enabled
+Training Set Filter: Removed 125 leaked/corrupt images.
+Training Set Loaded -> Total Train Images: 15,029
+SUCCESS: Located and 100% matched all 15 class categories between Training and Test sets!
+Verified Categories: ['Pepper__bell___Bacterial_spot', 'Pepper__bell___healthy', 'Potato___Early_blight', 'Potato___Late_blight', 'Potato___healthy', 'Tomato_Bacterial_spot', 'Tomato_Early_blight', 'Tomato_Late_blight', 'Tomato_Leaf_Mold', 'Tomato_Septoria_leaf_spot', 'Tomato_Spider_mites_Two_spotted_spider_mite', 'Tomato__Target_Spot', 'Tomato__Tomato_YellowLeaf__Curl_Virus', 'Tomato__Tomato_mosaic_virus', 'Tomato_healthy']
+Local 'Test Set' Split Complete (50% Val / 50% Test) -> Val: 36,356 | Test: 36,351
+
+--- Running Automated GPU Hyperparameter Tuning (Anti-Overfit / Anti-Underfit) ---
+  Trial_1_Balanced -> Train Acc: 94.33% | Val Acc: 51.67% | Val F1: 62.82% | Gap: 42.67% | Score: 41.49
+  Trial_2_HighReg -> Train Acc: 95.00% | Val Acc: 70.42% | Val F1: 68.15% | Gap: 24.58% | Score: 55.86
+  Trial_3_FastLearn -> Train Acc: 95.54% | Val Acc: 62.42% | Val F1: 60.76% | Gap: 33.13% | Score: 44.20
+Selected Best Hyperparameters: Trial_2_HighReg -> {'name': 'Trial_2_HighReg', 'backbone_lr': 8e-05, 'head_lr': 0.0003, 'weight_decay': 0.003, 'dropout_rate': 0.5, 'mixup_alpha': 0.3}
+
+--- Training Conv_BN_ReLU on cuda:0 ---
+Epoch 01/50 | Head LR: 0.000300 | Train Loss: 1.2222 Acc: 68.49% | Val Loss: 1.5349 Acc: 60.75% Macro-F1: 62.65% | Gap: +7.74%
+Epoch 02/50 | Head LR: 0.000300 | Train Loss: 1.0041 Acc: 73.42% | Val Loss: 1.6876 Acc: 55.77% Macro-F1: 60.48% | Gap: +17.64%
+Epoch 03/50 | Head LR: 0.000299 | Train Loss: 0.9541 Acc: 71.26% | Val Loss: 1.8651 Acc: 51.90% Macro-F1: 58.31% | Gap: +19.36%
+Epoch 04/50 | Head LR: 0.000297 | Train Loss: 0.8957 Acc: 77.53% | Val Loss: 1.6721 Acc: 57.94% Macro-F1: 61.44% | Gap: +19.59%
+Epoch 05/50 | Head LR: 0.000295 | Train Loss: 0.9103 Acc: 77.64% | Val Loss: 1.7020 Acc: 56.97% Macro-F1: 60.57% | Gap: +20.67%
+Epoch 06/50 | Head LR: 0.000293 | Train Loss: 0.9363 Acc: 74.20% | Val Loss: 1.5692 Acc: 63.73% Macro-F1: 63.74% | Gap: +10.47%
+Epoch 07/50 | Head LR: 0.000290 | Train Loss: 0.8724 Acc: 77.70% | Val Loss: 1.5601 Acc: 63.89% Macro-F1: 63.93% | Gap: +13.81%
+Epoch 08/50 | Head LR: 0.000286 | Train Loss: 0.8876 Acc: 77.41% | Val Loss: 1.3284 Acc: 72.18% Macro-F1: 67.69% | Gap: +5.23%
+Epoch 09/50 | Head LR: 0.000282 | Train Loss: 0.8628 Acc: 76.66% | Val Loss: 1.3213 Acc: 72.61% Macro-F1: 69.41% | Gap: +4.05%
+Epoch 10/50 | Head LR: 0.000277 | Train Loss: 0.8859 Acc: 77.90% | Val Loss: 1.5902 Acc: 61.18% Macro-F1: 61.87% | Gap: +16.72%
+Epoch 11/50 | Head LR: 0.000271 | Train Loss: 0.8754 Acc: 74.51% | Val Loss: 1.2473 Acc: 73.47% Macro-F1: 68.03% | Gap: +1.04%
+Epoch 12/50 | Head LR: 0.000266 | Train Loss: 0.8552 Acc: 77.30% | Val Loss: 1.6152 Acc: 60.79% Macro-F1: 63.38% | Gap: +16.51%
+Epoch 13/50 | Head LR: 0.000259 | Train Loss: 0.8687 Acc: 78.89% | Val Loss: 1.5180 Acc: 63.59% Macro-F1: 64.56% | Gap: +15.30%
+Epoch 14/50 | Head LR: 0.000253 | Train Loss: 0.8492 Acc: 77.96% | Val Loss: 1.7636 Acc: 58.29% Macro-F1: 61.83% | Gap: +19.67%
+Epoch 15/50 | Head LR: 0.000246 | Train Loss: 0.8708 Acc: 76.98% | Val Loss: 1.3886 Acc: 68.68% Macro-F1: 64.75% | Gap: +8.30%
+Epoch 16/50 | Head LR: 0.000238 | Train Loss: 0.8177 Acc: 83.15% | Val Loss: 1.4230 Acc: 69.20% Macro-F1: 70.56% | Gap: +13.95%
+Epoch 17/50 | Head LR: 0.000231 | Train Loss: 0.8693 Acc: 77.52% | Val Loss: 1.5608 Acc: 62.97% Macro-F1: 63.59% | Gap: +14.55%
+Epoch 18/50 | Head LR: 0.000223 | Train Loss: 0.8716 Acc: 75.01% | Val Loss: 1.6750 Acc: 56.95% Macro-F1: 61.21% | Gap: +18.06%
+Epoch 19/50 | Head LR: 0.000214 | Train Loss: 0.8520 Acc: 75.83% | Val Loss: 1.5531 Acc: 64.05% Macro-F1: 63.42% | Gap: +11.77%
+Epoch 20/50 | Head LR: 0.000206 | Train Loss: 0.8569 Acc: 76.86% | Val Loss: 1.5085 Acc: 64.43% Macro-F1: 62.85% | Gap: +12.43%
+Epoch 21/50 | Head LR: 0.000197 | Train Loss: 0.8243 Acc: 75.39% | Val Loss: 1.7976 Acc: 57.66% Macro-F1: 62.63% | Gap: +17.73%
+Epoch 22/50 | Head LR: 0.000188 | Train Loss: 0.8525 Acc: 77.07% | Val Loss: 1.8084 Acc: 56.80% Macro-F1: 60.74% | Gap: +20.27%
+Epoch 23/50 | Head LR: 0.000179 | Train Loss: 0.8259 Acc: 79.29% | Val Loss: 1.7953 Acc: 58.19% Macro-F1: 61.33% | Gap: +21.10%
+Epoch 24/50 | Head LR: 0.000169 | Train Loss: 0.8155 Acc: 75.37% | Val Loss: 1.9776 Acc: 48.12% Macro-F1: 57.29% | Gap: +27.24%
+Epoch 25/50 | Head LR: 0.000160 | Train Loss: 0.8520 Acc: 73.40% | Val Loss: 1.7032 Acc: 58.95% Macro-F1: 61.56% | Gap: +14.45%
+Epoch 26/50 | Head LR: 0.000150 | Train Loss: 0.8163 Acc: 78.56% | Val Loss: 1.8729 Acc: 51.38% Macro-F1: 58.25% | Gap: +27.18%
+Epoch 27/50 | Head LR: 0.000141 | Train Loss: 0.8458 Acc: 79.74% | Val Loss: 1.8772 Acc: 54.55% Macro-F1: 58.66% | Gap: +25.19%
+Epoch 28/50 | Head LR: 0.000132 | Train Loss: 0.8215 Acc: 80.22% | Val Loss: 1.7434 Acc: 58.38% Macro-F1: 60.29% | Gap: +21.84%
+Epoch 29/50 | Head LR: 0.000122 | Train Loss: 0.8213 Acc: 74.43% | Val Loss: 1.8035 Acc: 55.03% Macro-F1: 61.60% | Gap: +19.40%
+Epoch 30/50 | Head LR: 0.000113 | Train Loss: 0.8567 Acc: 76.61% | Val Loss: 1.7809 Acc: 58.73% Macro-F1: 62.15% | Gap: +17.87%
+Epoch 31/50 | Head LR: 0.000104 | Train Loss: 0.7993 Acc: 74.82% | Val Loss: 2.4476 Acc: 39.97% Macro-F1: 57.55% | Gap: +34.85%
+Epoch 32/50 | Head LR: 0.000095 | Train Loss: 0.8307 Acc: 78.64% | Val Loss: 2.0377 Acc: 48.42% Macro-F1: 59.13% | Gap: +30.22%
+Epoch 33/50 | Head LR: 0.000087 | Train Loss: 0.8205 Acc: 76.65% | Val Loss: 1.9138 Acc: 53.27% Macro-F1: 60.71% | Gap: +23.37%
+Epoch 34/50 | Head LR: 0.000078 | Train Loss: 0.8306 Acc: 76.24% | Val Loss: 2.0429 Acc: 51.20% Macro-F1: 60.62% | Gap: +25.04%
+Epoch 35/50 | Head LR: 0.000070 | Train Loss: 0.8125 Acc: 78.31% | Val Loss: 2.0915 Acc: 48.92% Macro-F1: 59.54% | Gap: +29.39%
+Epoch 36/50 | Head LR: 0.000063 | Train Loss: 0.8169 Acc: 79.61% | Val Loss: 2.3994 Acc: 41.80% Macro-F1: 57.04% | Gap: +37.81%
+Epoch 37/50 | Head LR: 0.000055 | Train Loss: 0.8444 Acc: 76.09% | Val Loss: 2.2324 Acc: 43.41% Macro-F1: 57.60% | Gap: +32.68%
+Epoch 38/50 | Head LR: 0.000048 | Train Loss: 0.8348 Acc: 76.79% | Val Loss: 2.1807 Acc: 45.78% Macro-F1: 58.64% | Gap: +31.01%
+Epoch 39/50 | Head LR: 0.000042 | Train Loss: 0.8203 Acc: 76.22% | Val Loss: 2.2035 Acc: 44.52% Macro-F1: 57.07% | Gap: +31.70%
+Epoch 40/50 | Head LR: 0.000035 | Train Loss: 0.8272 Acc: 81.13% | Val Loss: 2.1324 Acc: 46.66% Macro-F1: 58.28% | Gap: +34.47%
+Epoch 41/50 | Head LR: 0.000030 | Train Loss: 0.8498 Acc: 77.34% | Val Loss: 2.0907 Acc: 46.78% Macro-F1: 59.15% | Gap: +30.56%
+Epoch 42/50 | Head LR: 0.000024 | Train Loss: 0.8440 Acc: 76.29% | Val Loss: 2.1054 Acc: 48.30% Macro-F1: 59.62% | Gap: +27.98%
+Epoch 43/50 | Head LR: 0.000019 | Train Loss: 0.8111 Acc: 79.45% | Val Loss: 2.0890 Acc: 48.59% Macro-F1: 59.08% | Gap: +30.86%
+Epoch 44/50 | Head LR: 0.000015 | Train Loss: 0.8024 Acc: 75.71% | Val Loss: 2.1231 Acc: 48.33% Macro-F1: 59.70% | Gap: +27.37%
+Epoch 45/50 | Head LR: 0.000011 | Train Loss: 0.8100 Acc: 77.10% | Val Loss: 2.2190 Acc: 44.47% Macro-F1: 57.87% | Gap: +32.63%
+Epoch 46/50 | Head LR: 0.000008 | Train Loss: 0.8232 Acc: 74.38% | Val Loss: 2.2607 Acc: 43.83% Macro-F1: 58.07% | Gap: +30.56%
+Epoch 47/50 | Head LR: 0.000006 | Train Loss: 0.8035 Acc: 78.87% | Val Loss: 2.2289 Acc: 45.51% Macro-F1: 58.72% | Gap: +33.37%
+Epoch 48/50 | Head LR: 0.000004 | Train Loss: 0.8262 Acc: 75.14% | Val Loss: 2.2037 Acc: 45.14% Macro-F1: 58.43% | Gap: +30.00%
+Epoch 49/50 | Head LR: 0.000002 | Train Loss: 0.8387 Acc: 77.18% | Val Loss: 2.1739 Acc: 45.79% Macro-F1: 58.63% | Gap: +31.39%
+Epoch 50/50 | Head LR: 0.000001 | Train Loss: 0.8719 Acc: 75.77% | Val Loss: 2.1447 Acc: 46.78% Macro-F1: 59.13% | Gap: +28.98%
+
+==================== Conv_BN_ReLU OVERALL PERFORMANCE ====================
+Split (from 'Test Set')   Loss  Accuracy (%)  Macro Precision (%)  Macro Recall (%)  Macro F1 (%)  Weighted F1 (%)
+         Validation Set 1.4230         69.20                71.36             81.12         70.56            70.93
+               Test Set 1.4339         68.89                71.06             81.32         70.53            70.59
+
+-------------------- Conv_BN_ReLU TEST SET PER-CLASS METRICS --------------------
+                                      Class  Test Precision (%)  Test Recall (%)  Test F1 (%)  Support (Images)
+              Pepper__bell___Bacterial_spot               86.40           100.00        92.70              1709
+                     Pepper__bell___healthy               62.55            97.26        76.13               328
+                      Potato___Early_blight               47.49            72.37        57.35              8886
+                           Potato___healthy               99.72            84.65        91.57             10145
+                       Potato___Late_blight               98.33            37.43        54.22             10249
+                        Tomato__Target_Spot               97.44            99.56        98.49               229
+                Tomato__Tomato_mosaic_virus               98.35            78.81        87.50               151
+      Tomato__Tomato_YellowLeaf__Curl_Virus               96.83            97.73        97.28              1847
+                      Tomato_Bacterial_spot               85.82            90.36        88.03               529
+                        Tomato_Early_blight               49.82            86.50        63.23               163
+                             Tomato_healthy               96.95            88.61        92.59               395
+                         Tomato_Late_blight               31.65            31.54        31.60               875
+                           Tomato_Leaf_Mold                3.70            75.00         7.06                28
+                  Tomato_Septoria_leaf_spot               12.14            80.42        21.09               378
+Tomato_Spider_mites_Two_spotted_spider_mite               98.65            99.54        99.09               439
+
+[Conv_BN_ReLU Final Epoch Hyperparameters]:
+{
+  "final_epoch_reached": 50,
+  "best_validation_epoch": 16,
+  "final_backbone_lr": 1e-06,
+  "final_head_lr": 1e-06,
+  "weight_decay_L2": 0.003,
+  "dropout_probability": 0.5,
+  "mixup_alpha": 0.3,
+  "label_smoothing": 0.1,
+  "batch_size": 64,
+  "grad_clip_max_norm": 1.0,
+  "total_trainable_params": 33140079
+}
+
+--- Running Automated GPU Hyperparameter Tuning (Anti-Overfit / Anti-Underfit) ---
+  Trial_1_Balanced -> Train Acc: 94.96% | Val Acc: 65.75% | Val F1: 64.64% | Gap: 29.21% | Score: 50.04
+  Trial_2_HighReg -> Train Acc: 93.62% | Val Acc: 77.00% | Val F1: 69.16% | Gap: 16.62% | Score: 60.85
+  Trial_3_FastLearn -> Train Acc: 94.67% | Val Acc: 72.92% | Val F1: 65.72% | Gap: 21.75% | Score: 54.84
+Selected Best Hyperparameters: Trial_2_HighReg -> {'name': 'Trial_2_HighReg', 'backbone_lr': 8e-05, 'head_lr': 0.0003, 'weight_decay': 0.003, 'dropout_rate': 0.5, 'mixup_alpha': 0.3}
+
+--- Training SE_Block on cuda:0 ---
+Epoch 01/50 | Head LR: 0.000300 | Train Loss: 1.2424 Acc: 66.97% | Val Loss: 1.2934 Acc: 74.44% Macro-F1: 67.11% | Gap: -7.47%
+Epoch 02/50 | Head LR: 0.000300 | Train Loss: 0.9617 Acc: 77.00% | Val Loss: 1.4772 Acc: 65.19% Macro-F1: 63.63% | Gap: +11.80%
+Epoch 03/50 | Head LR: 0.000299 | Train Loss: 0.9436 Acc: 73.49% | Val Loss: 1.2240 Acc: 75.15% Macro-F1: 68.19% | Gap: -1.66%
+Epoch 04/50 | Head LR: 0.000297 | Train Loss: 0.9251 Acc: 80.22% | Val Loss: 1.5052 Acc: 63.69% Macro-F1: 62.09% | Gap: +16.53%
+Epoch 05/50 | Head LR: 0.000295 | Train Loss: 0.9257 Acc: 74.90% | Val Loss: 1.5313 Acc: 60.48% Macro-F1: 61.79% | Gap: +14.42%
+Epoch 06/50 | Head LR: 0.000293 | Train Loss: 0.8983 Acc: 77.22% | Val Loss: 1.3881 Acc: 66.66% Macro-F1: 65.06% | Gap: +10.56%
+Epoch 07/50 | Head LR: 0.000290 | Train Loss: 0.9041 Acc: 76.50% | Val Loss: 1.7596 Acc: 52.75% Macro-F1: 57.84% | Gap: +23.75%
+Epoch 08/50 | Head LR: 0.000286 | Train Loss: 0.9232 Acc: 74.70% | Val Loss: 1.4000 Acc: 65.80% Macro-F1: 65.38% | Gap: +8.90%
+Epoch 09/50 | Head LR: 0.000282 | Train Loss: 0.8846 Acc: 72.73% | Val Loss: 1.4492 Acc: 65.20% Macro-F1: 63.08% | Gap: +7.53%
+Epoch 10/50 | Head LR: 0.000277 | Train Loss: 0.8633 Acc: 77.73% | Val Loss: 1.6439 Acc: 60.68% Macro-F1: 65.65% | Gap: +17.05%
+Epoch 11/50 | Head LR: 0.000271 | Train Loss: 0.8764 Acc: 77.82% | Val Loss: 1.2985 Acc: 71.10% Macro-F1: 67.35% | Gap: +6.71%
+Epoch 12/50 | Head LR: 0.000266 | Train Loss: 0.8548 Acc: 79.21% | Val Loss: 1.5533 Acc: 63.44% Macro-F1: 65.51% | Gap: +15.77%
+Epoch 13/50 | Head LR: 0.000259 | Train Loss: 0.8604 Acc: 76.82% | Val Loss: 1.6582 Acc: 59.45% Macro-F1: 62.00% | Gap: +17.36%
+Epoch 14/50 | Head LR: 0.000253 | Train Loss: 0.8316 Acc: 76.29% | Val Loss: 1.3120 Acc: 72.76% Macro-F1: 69.61% | Gap: +3.54%
+Epoch 15/50 | Head LR: 0.000246 | Train Loss: 0.8821 Acc: 77.70% | Val Loss: 1.6225 Acc: 61.03% Macro-F1: 66.67% | Gap: +16.67%
+Epoch 16/50 | Head LR: 0.000238 | Train Loss: 0.8617 Acc: 81.18% | Val Loss: 1.5229 Acc: 64.36% Macro-F1: 66.36% | Gap: +16.82%
+Epoch 17/50 | Head LR: 0.000231 | Train Loss: 0.8618 Acc: 76.26% | Val Loss: 1.8007 Acc: 56.09% Macro-F1: 60.01% | Gap: +20.17%
+Epoch 18/50 | Head LR: 0.000223 | Train Loss: 0.8809 Acc: 72.99% | Val Loss: 1.3539 Acc: 69.83% Macro-F1: 63.09% | Gap: +3.17%
+Epoch 19/50 | Head LR: 0.000214 | Train Loss: 0.8455 Acc: 76.97% | Val Loss: 1.7827 Acc: 56.81% Macro-F1: 59.85% | Gap: +20.16%
+Epoch 20/50 | Head LR: 0.000206 | Train Loss: 0.8621 Acc: 76.59% | Val Loss: 1.6600 Acc: 60.52% Macro-F1: 62.61% | Gap: +16.07%
+Epoch 21/50 | Head LR: 0.000197 | Train Loss: 0.8358 Acc: 76.25% | Val Loss: 1.8114 Acc: 54.01% Macro-F1: 61.67% | Gap: +22.24%
+Epoch 22/50 | Head LR: 0.000188 | Train Loss: 0.8339 Acc: 76.84% | Val Loss: 1.8573 Acc: 55.33% Macro-F1: 61.87% | Gap: +21.51%
+Epoch 23/50 | Head LR: 0.000179 | Train Loss: 0.8581 Acc: 73.96% | Val Loss: 1.9011 Acc: 53.74% Macro-F1: 61.91% | Gap: +20.22%
+Epoch 24/50 | Head LR: 0.000169 | Train Loss: 0.8377 Acc: 73.15% | Val Loss: 1.8153 Acc: 56.01% Macro-F1: 61.99% | Gap: +17.14%
+Epoch 25/50 | Head LR: 0.000160 | Train Loss: 0.8366 Acc: 77.51% | Val Loss: 2.0239 Acc: 46.81% Macro-F1: 58.31% | Gap: +30.70%
+Epoch 26/50 | Head LR: 0.000150 | Train Loss: 0.8496 Acc: 81.66% | Val Loss: 1.8273 Acc: 54.45% Macro-F1: 60.42% | Gap: +27.21%
+Epoch 27/50 | Head LR: 0.000141 | Train Loss: 0.8384 Acc: 79.03% | Val Loss: 1.8663 Acc: 53.57% Macro-F1: 59.56% | Gap: +25.46%
+Epoch 28/50 | Head LR: 0.000132 | Train Loss: 0.8116 Acc: 80.08% | Val Loss: 2.1585 Acc: 44.77% Macro-F1: 54.21% | Gap: +35.30%
+Epoch 29/50 | Head LR: 0.000122 | Train Loss: 0.8245 Acc: 80.54% | Val Loss: 1.7377 Acc: 59.74% Macro-F1: 64.30% | Gap: +20.81%
+Epoch 30/50 | Head LR: 0.000113 | Train Loss: 0.8515 Acc: 74.73% | Val Loss: 1.6803 Acc: 60.05% Macro-F1: 63.08% | Gap: +14.68%
+Epoch 31/50 | Head LR: 0.000104 | Train Loss: 0.7971 Acc: 84.19% | Val Loss: 1.7354 Acc: 59.24% Macro-F1: 62.74% | Gap: +24.95%
+Epoch 32/50 | Head LR: 0.000095 | Train Loss: 0.8247 Acc: 79.87% | Val Loss: 1.9589 Acc: 52.84% Macro-F1: 60.44% | Gap: +27.02%
+Epoch 33/50 | Head LR: 0.000087 | Train Loss: 0.8275 Acc: 76.77% | Val Loss: 1.8431 Acc: 57.23% Macro-F1: 63.95% | Gap: +19.54%
+Epoch 34/50 | Head LR: 0.000078 | Train Loss: 0.8035 Acc: 78.83% | Val Loss: 1.7923 Acc: 57.90% Macro-F1: 63.12% | Gap: +20.93%
+Epoch 35/50 | Head LR: 0.000070 | Train Loss: 0.8318 Acc: 78.26% | Val Loss: 1.8902 Acc: 54.74% Macro-F1: 60.36% | Gap: +23.52%
+Epoch 36/50 | Head LR: 0.000063 | Train Loss: 0.8342 Acc: 77.64% | Val Loss: 1.8020 Acc: 57.31% Macro-F1: 61.22% | Gap: +20.32%
+Epoch 37/50 | Head LR: 0.000055 | Train Loss: 0.8293 Acc: 78.53% | Val Loss: 2.0391 Acc: 48.71% Macro-F1: 59.26% | Gap: +29.82%
+Epoch 38/50 | Head LR: 0.000048 | Train Loss: 0.8494 Acc: 77.26% | Val Loss: 2.0231 Acc: 50.29% Macro-F1: 59.23% | Gap: +26.97%
+Epoch 39/50 | Head LR: 0.000042 | Train Loss: 0.8029 Acc: 74.51% | Val Loss: 2.0207 Acc: 49.30% Macro-F1: 59.37% | Gap: +25.21%
+Epoch 40/50 | Head LR: 0.000035 | Train Loss: 0.8331 Acc: 80.41% | Val Loss: 1.8812 Acc: 54.37% Macro-F1: 61.19% | Gap: +26.04%
+Epoch 41/50 | Head LR: 0.000030 | Train Loss: 0.8355 Acc: 71.61% | Val Loss: 1.9036 Acc: 52.15% Macro-F1: 60.42% | Gap: +19.46%
+Epoch 42/50 | Head LR: 0.000024 | Train Loss: 0.8097 Acc: 79.10% | Val Loss: 1.9794 Acc: 51.36% Macro-F1: 60.26% | Gap: +27.74%
+Epoch 43/50 | Head LR: 0.000019 | Train Loss: 0.8240 Acc: 75.30% | Val Loss: 1.8226 Acc: 54.91% Macro-F1: 61.11% | Gap: +20.39%
+Epoch 44/50 | Head LR: 0.000015 | Train Loss: 0.8120 Acc: 82.79% | Val Loss: 1.9386 Acc: 51.67% Macro-F1: 60.07% | Gap: +31.12%
+Epoch 45/50 | Head LR: 0.000011 | Train Loss: 0.8013 Acc: 72.29% | Val Loss: 1.9429 Acc: 52.14% Macro-F1: 59.93% | Gap: +20.15%
+Epoch 46/50 | Head LR: 0.000008 | Train Loss: 0.8449 Acc: 78.25% | Val Loss: 2.0254 Acc: 47.99% Macro-F1: 58.42% | Gap: +30.26%
+Epoch 47/50 | Head LR: 0.000006 | Train Loss: 0.8320 Acc: 73.88% | Val Loss: 1.9901 Acc: 50.45% Macro-F1: 59.34% | Gap: +23.44%
+Epoch 48/50 | Head LR: 0.000004 | Train Loss: 0.8677 Acc: 69.81% | Val Loss: 1.9436 Acc: 50.11% Macro-F1: 59.14% | Gap: +19.70%
+Epoch 49/50 | Head LR: 0.000002 | Train Loss: 0.8577 Acc: 74.08% | Val Loss: 2.0115 Acc: 49.64% Macro-F1: 59.23% | Gap: +24.44%
+Epoch 50/50 | Head LR: 0.000001 | Train Loss: 0.8247 Acc: 79.25% | Val Loss: 1.9934 Acc: 50.75% Macro-F1: 59.72% | Gap: +28.50%
+
+==================== SE_Block OVERALL PERFORMANCE ====================
+Split (from 'Test Set')   Loss  Accuracy (%)  Macro Precision (%)  Macro Recall (%)  Macro F1 (%)  Weighted F1 (%)
+         Validation Set 1.3120         72.76                68.66             83.00         69.61            74.38
+               Test Set 1.3223         72.40                68.37             82.75         69.45            74.14
+
+-------------------- SE_Block TEST SET PER-CLASS METRICS --------------------
+                                      Class  Test Precision (%)  Test Recall (%)  Test F1 (%)  Support (Images)
+              Pepper__bell___Bacterial_spot               86.01           100.00        92.48              1709
+                     Pepper__bell___healthy               43.62            99.09        60.58               328
+                      Potato___Early_blight               62.56            79.39        69.98              8886
+                           Potato___healthy               99.47            88.67        93.76             10145
+                       Potato___Late_blight               92.00            39.50        55.27             10249
+                        Tomato__Target_Spot               95.82           100.00        97.86               229
+                Tomato__Tomato_mosaic_virus               96.83            80.79        88.09               151
+      Tomato__Tomato_YellowLeaf__Curl_Virus               99.72            97.89        98.80              1847
+                      Tomato_Bacterial_spot               75.51            90.36        82.27               529
+                        Tomato_Early_blight               45.57            88.34        60.13               163
+                             Tomato_healthy               98.06            89.62        93.65               395
+                         Tomato_Late_blight               13.15            32.91        18.79               875
+                           Tomato_Leaf_Mold                3.66            75.00         6.98                28
+                  Tomato_Septoria_leaf_spot               13.77            80.42        23.51               378
+Tomato_Spider_mites_Two_spotted_spider_mite               99.77            99.32        99.54               439
+
+[SE_Block Final Epoch Hyperparameters]:
+{
+  "final_epoch_reached": 50,
+  "best_validation_epoch": 14,
+  "final_backbone_lr": 1e-06,
+  "final_head_lr": 1e-06,
+  "weight_decay_L2": 0.003,
+  "dropout_probability": 0.5,
+  "mixup_alpha": 0.3,
+  "label_smoothing": 0.1,
+  "batch_size": 64,
+  "grad_clip_max_norm": 1.0,
+  "total_trainable_params": 33213807
+}
+
+--- Running Automated GPU Hyperparameter Tuning (Anti-Overfit / Anti-Underfit) ---
+  Trial_1_Balanced -> Train Acc: 94.67% | Val Acc: 65.92% | Val F1: 61.37% | Gap: 28.75% | Score: 47.00
+  Trial_2_HighReg -> Train Acc: 92.96% | Val Acc: 71.50% | Val F1: 66.88% | Gap: 21.46% | Score: 56.15
+  Trial_3_FastLearn -> Train Acc: 95.67% | Val Acc: 65.25% | Val F1: 62.32% | Gap: 30.42% | Score: 47.11
+Selected Best Hyperparameters: Trial_2_HighReg -> {'name': 'Trial_2_HighReg', 'backbone_lr': 8e-05, 'head_lr': 0.0003, 'weight_decay': 0.003, 'dropout_rate': 0.5, 'mixup_alpha': 0.3}
+
+--- Training CBAM on cuda:0 ---
+Epoch 01/50 | Head LR: 0.000300 | Train Loss: 1.3277 Acc: 67.01% | Val Loss: 1.5444 Acc: 64.03% Macro-F1: 62.18% | Gap: +2.98%
+Epoch 02/50 | Head LR: 0.000300 | Train Loss: 1.0138 Acc: 74.00% | Val Loss: 1.6443 Acc: 58.37% Macro-F1: 59.04% | Gap: +15.63%
+Epoch 03/50 | Head LR: 0.000299 | Train Loss: 0.9667 Acc: 74.46% | Val Loss: 1.4416 Acc: 67.25% Macro-F1: 61.31% | Gap: +7.22%
+Epoch 04/50 | Head LR: 0.000297 | Train Loss: 0.9643 Acc: 71.23% | Val Loss: 1.6415 Acc: 60.57% Macro-F1: 59.10% | Gap: +10.66%
+Epoch 05/50 | Head LR: 0.000295 | Train Loss: 0.8685 Acc: 77.38% | Val Loss: 1.6052 Acc: 61.00% Macro-F1: 57.85% | Gap: +16.38%
+Epoch 06/50 | Head LR: 0.000293 | Train Loss: 0.8826 Acc: 73.63% | Val Loss: 1.4855 Acc: 62.96% Macro-F1: 62.63% | Gap: +10.67%
+Epoch 07/50 | Head LR: 0.000290 | Train Loss: 0.9437 Acc: 73.79% | Val Loss: 1.7902 Acc: 49.98% Macro-F1: 58.36% | Gap: +23.81%
+Epoch 08/50 | Head LR: 0.000286 | Train Loss: 0.8575 Acc: 74.98% | Val Loss: 1.6659 Acc: 55.22% Macro-F1: 59.76% | Gap: +19.75%
+Epoch 09/50 | Head LR: 0.000282 | Train Loss: 0.8375 Acc: 80.60% | Val Loss: 1.3978 Acc: 68.33% Macro-F1: 65.42% | Gap: +12.26%
+Epoch 10/50 | Head LR: 0.000277 | Train Loss: 0.8846 Acc: 78.59% | Val Loss: 1.9877 Acc: 47.11% Macro-F1: 59.13% | Gap: +31.49%
+Epoch 11/50 | Head LR: 0.000271 | Train Loss: 0.8738 Acc: 76.90% | Val Loss: 1.3515 Acc: 71.01% Macro-F1: 66.96% | Gap: +5.90%
+Epoch 12/50 | Head LR: 0.000266 | Train Loss: 0.8933 Acc: 76.45% | Val Loss: 1.3993 Acc: 67.61% Macro-F1: 67.82% | Gap: +8.84%
+Epoch 13/50 | Head LR: 0.000259 | Train Loss: 0.8526 Acc: 74.96% | Val Loss: 1.6621 Acc: 61.00% Macro-F1: 61.95% | Gap: +13.96%
+Epoch 14/50 | Head LR: 0.000253 | Train Loss: 0.8772 Acc: 72.72% | Val Loss: 1.5811 Acc: 62.79% Macro-F1: 63.07% | Gap: +9.93%
+Epoch 15/50 | Head LR: 0.000246 | Train Loss: 0.9026 Acc: 77.18% | Val Loss: 1.4193 Acc: 68.28% Macro-F1: 65.16% | Gap: +8.90%
+Epoch 16/50 | Head LR: 0.000238 | Train Loss: 0.8337 Acc: 80.56% | Val Loss: 1.6047 Acc: 62.49% Macro-F1: 64.74% | Gap: +18.06%
+Epoch 17/50 | Head LR: 0.000231 | Train Loss: 0.8862 Acc: 73.46% | Val Loss: 1.8579 Acc: 50.61% Macro-F1: 56.49% | Gap: +22.86%
+Epoch 18/50 | Head LR: 0.000223 | Train Loss: 0.8406 Acc: 78.83% | Val Loss: 1.6054 Acc: 61.35% Macro-F1: 61.40% | Gap: +17.48%
+Epoch 19/50 | Head LR: 0.000214 | Train Loss: 0.8285 Acc: 79.70% | Val Loss: 1.4636 Acc: 65.65% Macro-F1: 65.99% | Gap: +14.05%
+Epoch 20/50 | Head LR: 0.000206 | Train Loss: 0.8337 Acc: 72.60% | Val Loss: 1.5615 Acc: 63.63% Macro-F1: 63.36% | Gap: +8.97%
+Epoch 21/50 | Head LR: 0.000197 | Train Loss: 0.8420 Acc: 77.66% | Val Loss: 1.5114 Acc: 63.15% Macro-F1: 63.83% | Gap: +14.52%
+Epoch 22/50 | Head LR: 0.000188 | Train Loss: 0.8089 Acc: 74.40% | Val Loss: 1.7902 Acc: 56.04% Macro-F1: 61.21% | Gap: +18.36%
+Epoch 23/50 | Head LR: 0.000179 | Train Loss: 0.8080 Acc: 75.82% | Val Loss: 1.6885 Acc: 59.42% Macro-F1: 62.41% | Gap: +16.40%
+Epoch 24/50 | Head LR: 0.000169 | Train Loss: 0.8475 Acc: 75.20% | Val Loss: 1.7295 Acc: 59.11% Macro-F1: 61.42% | Gap: +16.09%
+Epoch 25/50 | Head LR: 0.000160 | Train Loss: 0.8225 Acc: 81.46% | Val Loss: 1.7690 Acc: 58.72% Macro-F1: 62.06% | Gap: +22.73%
+Epoch 26/50 | Head LR: 0.000150 | Train Loss: 0.8479 Acc: 74.42% | Val Loss: 1.6967 Acc: 60.17% Macro-F1: 61.79% | Gap: +14.26%
+Epoch 27/50 | Head LR: 0.000141 | Train Loss: 0.8685 Acc: 78.91% | Val Loss: 2.0519 Acc: 50.34% Macro-F1: 57.43% | Gap: +28.57%
+Epoch 28/50 | Head LR: 0.000132 | Train Loss: 0.8102 Acc: 75.67% | Val Loss: 1.6639 Acc: 62.92% Macro-F1: 64.91% | Gap: +12.75%
+Epoch 29/50 | Head LR: 0.000122 | Train Loss: 0.8148 Acc: 74.00% | Val Loss: 1.9101 Acc: 54.54% Macro-F1: 59.30% | Gap: +19.46%
+Epoch 30/50 | Head LR: 0.000113 | Train Loss: 0.8380 Acc: 72.01% | Val Loss: 1.6702 Acc: 59.64% Macro-F1: 62.90% | Gap: +12.37%
+Epoch 31/50 | Head LR: 0.000104 | Train Loss: 0.8441 Acc: 76.85% | Val Loss: 1.7831 Acc: 58.18% Macro-F1: 62.51% | Gap: +18.67%
+Epoch 32/50 | Head LR: 0.000095 | Train Loss: 0.8171 Acc: 80.45% | Val Loss: 1.6804 Acc: 61.82% Macro-F1: 63.96% | Gap: +18.63%
+Epoch 33/50 | Head LR: 0.000087 | Train Loss: 0.8496 Acc: 74.13% | Val Loss: 1.8287 Acc: 54.29% Macro-F1: 60.50% | Gap: +19.84%
+Epoch 34/50 | Head LR: 0.000078 | Train Loss: 0.8604 Acc: 74.96% | Val Loss: 1.7533 Acc: 58.43% Macro-F1: 61.97% | Gap: +16.52%
+Epoch 35/50 | Head LR: 0.000070 | Train Loss: 0.8397 Acc: 78.53% | Val Loss: 1.7514 Acc: 58.17% Macro-F1: 61.21% | Gap: +20.36%
+Epoch 36/50 | Head LR: 0.000063 | Train Loss: 0.8166 Acc: 74.80% | Val Loss: 1.9497 Acc: 50.61% Macro-F1: 58.63% | Gap: +24.18%
+Epoch 37/50 | Head LR: 0.000055 | Train Loss: 0.8218 Acc: 77.37% | Val Loss: 1.8376 Acc: 55.17% Macro-F1: 59.64% | Gap: +22.20%
+Epoch 38/50 | Head LR: 0.000048 | Train Loss: 0.8146 Acc: 79.72% | Val Loss: 1.7761 Acc: 57.37% Macro-F1: 60.39% | Gap: +22.35%
+Epoch 39/50 | Head LR: 0.000042 | Train Loss: 0.8107 Acc: 78.81% | Val Loss: 1.8611 Acc: 53.35% Macro-F1: 60.20% | Gap: +25.47%
+Epoch 40/50 | Head LR: 0.000035 | Train Loss: 0.8352 Acc: 74.93% | Val Loss: 1.9138 Acc: 51.75% Macro-F1: 58.86% | Gap: +23.17%
+Epoch 41/50 | Head LR: 0.000030 | Train Loss: 0.7978 Acc: 83.07% | Val Loss: 1.9355 Acc: 52.23% Macro-F1: 60.19% | Gap: +30.84%
+Epoch 42/50 | Head LR: 0.000024 | Train Loss: 0.8035 Acc: 76.76% | Val Loss: 1.8172 Acc: 55.44% Macro-F1: 61.33% | Gap: +21.32%
+Epoch 43/50 | Head LR: 0.000019 | Train Loss: 0.8405 Acc: 74.34% | Val Loss: 1.9288 Acc: 51.12% Macro-F1: 59.18% | Gap: +23.21%
+Epoch 44/50 | Head LR: 0.000015 | Train Loss: 0.8352 Acc: 77.66% | Val Loss: 1.9162 Acc: 50.98% Macro-F1: 59.47% | Gap: +26.67%
+Epoch 45/50 | Head LR: 0.000011 | Train Loss: 0.8504 Acc: 69.20% | Val Loss: 1.9691 Acc: 51.65% Macro-F1: 59.70% | Gap: +17.55%
+Epoch 46/50 | Head LR: 0.000008 | Train Loss: 0.8274 Acc: 76.27% | Val Loss: 1.9596 Acc: 51.53% Macro-F1: 60.52% | Gap: +24.74%
+Epoch 47/50 | Head LR: 0.000006 | Train Loss: 0.8373 Acc: 76.67% | Val Loss: 1.9349 Acc: 52.85% Macro-F1: 60.38% | Gap: +23.82%
+Epoch 48/50 | Head LR: 0.000004 | Train Loss: 0.8185 Acc: 79.75% | Val Loss: 1.9669 Acc: 51.44% Macro-F1: 59.82% | Gap: +28.31%
+Epoch 49/50 | Head LR: 0.000002 | Train Loss: 0.8505 Acc: 77.60% | Val Loss: 1.9192 Acc: 51.59% Macro-F1: 59.55% | Gap: +26.01%
+Epoch 50/50 | Head LR: 0.000001 | Train Loss: 0.7933 Acc: 75.58% | Val Loss: 1.9308 Acc: 52.15% Macro-F1: 59.94% | Gap: +23.43%
+
+==================== CBAM OVERALL PERFORMANCE ====================
+Split (from 'Test Set')   Loss  Accuracy (%)  Macro Precision (%)  Macro Recall (%)  Macro F1 (%)  Weighted F1 (%)
+         Validation Set 1.3993         67.61                68.30             81.49         67.82            72.07
+               Test Set 1.4054         67.41                67.79             81.50         67.64            71.97
+
+-------------------- CBAM TEST SET PER-CLASS METRICS --------------------
+                                      Class  Test Precision (%)  Test Recall (%)  Test F1 (%)  Support (Images)
+              Pepper__bell___Bacterial_spot               81.85           100.00        90.02              1709
+                     Pepper__bell___healthy               45.47            99.39        62.39               328
+                      Potato___Early_blight               61.98            40.06        48.67              8886
+                           Potato___healthy               93.87            94.61        94.24             10145
+                       Potato___Late_blight               97.60            50.01        66.14             10249
+                        Tomato__Target_Spot               96.61            99.56        98.06               229
+                Tomato__Tomato_mosaic_virus               92.42            80.79        86.22               151
+      Tomato__Tomato_YellowLeaf__Curl_Virus               98.85            97.62        98.23              1847
+                      Tomato_Bacterial_spot               93.86            89.60        91.68               529
+                        Tomato_Early_blight               34.45            88.34        49.57               163
+                             Tomato_healthy               97.77            88.86        93.10               395
+                         Tomato_Late_blight               14.50            31.54        19.86               875
+                           Tomato_Leaf_Mold                3.41            75.00         6.52                28
+                  Tomato_Septoria_leaf_spot                5.59            87.04        10.50               378
+Tomato_Spider_mites_Two_spotted_spider_mite               98.65           100.00        99.32               439
+
+[CBAM Final Epoch Hyperparameters]:
+{
+  "final_epoch_reached": 50,
+  "best_validation_epoch": 12,
+  "final_backbone_lr": 1e-06,
+  "final_head_lr": 1e-06,
+  "weight_decay_L2": 0.003,
+  "dropout_probability": 0.5,
+  "mixup_alpha": 0.3,
+  "label_smoothing": 0.1,
+  "batch_size": 64,
+  "grad_clip_max_norm": 1.0,
+  "total_trainable_params": 33213905
+}
+
+=========================================================================================================
+1. CORE CLASSIFICATION METRICS COMPARISON (VALIDATION SPLIT vs. TEST SPLIT)
+=========================================================================================================
+       Model  Val Loss  Val Acc (%)  Val Macro-F1 (%)  Test Loss  Test Acc (%)  Test Precision (%)  Test Recall (%)  Test Macro-F1 (%)  Test Weighted-F1 (%)  Composite Score
+    SE_Block    1.3120        72.76             69.61     1.3223         72.40               68.37            82.75              69.45                 74.14            70.23
+Conv_BN_ReLU    1.4230        69.20             70.56     1.4339         68.89               71.06            81.32              70.53                 70.59            66.64
+        CBAM    1.3993        67.61             67.82     1.4054         67.41               67.79            81.50              67.64                 71.97            66.22
+
+=========================================================================================================
+2. GENERALIZATION, OVERFITTING GAP, CONVERGENCE & COMPLEXITY PARAMETERS
+=========================================================================================================
+       Model  Train Acc @ Best (%)  Train-Val Gap (%)  Val-Test F1 Shift (%)  Val-Test Acc Shift (%)  Best Epoch  Total Epochs Run Trainable Params  Feature Weight Mean  Feature Weight Std
+Conv_BN_ReLU                 83.15              13.95                   0.03                    0.31          16                50       33,140,079              0.01458             0.00255
+    SE_Block                 76.29               3.53                   0.16                    0.36          14                50       33,213,807              0.02276             0.00395
+        CBAM                 76.45               8.84                   0.18                    0.20          12                50       33,213,905              0.02336             0.00415
+
+=========================================================================================================
+3. PER-CLASS TEST F1-SCORE COMPARISON & CLASS WINNER BREAKDOWN
+=========================================================================================================
+                                      Class  Conv_BN_ReLU F1 (%)  SE_Block F1 (%)  CBAM F1 (%)  Support Best Model(s)
+              Pepper__bell___Bacterial_spot                92.70            92.48        90.02     1709  Conv_BN_ReLU
+                     Pepper__bell___healthy                76.13            60.58        62.39      328  Conv_BN_ReLU
+                      Potato___Early_blight                57.35            69.98        48.67     8886      SE_Block
+                       Potato___Late_blight                54.22            55.27        66.14    10249          CBAM
+                           Potato___healthy                91.57            93.76        94.24    10145          CBAM
+                      Tomato_Bacterial_spot                88.03            82.27        91.68      529          CBAM
+                        Tomato_Early_blight                63.23            60.13        49.57      163  Conv_BN_ReLU
+                         Tomato_Late_blight                31.60            18.79        19.86      875  Conv_BN_ReLU
+                           Tomato_Leaf_Mold                 7.06             6.98         6.52       28  Conv_BN_ReLU
+                  Tomato_Septoria_leaf_spot                21.09            23.51        10.50      378      SE_Block
+Tomato_Spider_mites_Two_spotted_spider_mite                99.09            99.54        99.32      439      SE_Block
+                        Tomato__Target_Spot                98.49            97.86        98.06      229  Conv_BN_ReLU
+      Tomato__Tomato_YellowLeaf__Curl_Virus                97.28            98.80        98.23     1847      SE_Block
+                Tomato__Tomato_mosaic_virus                87.50            88.09        86.22      151      SE_Block
+                             Tomato_healthy                92.59            93.65        93.10      395      SE_Block
+
+=========================================================================================================
+4. FINAL MULTI-PARAMETER VERDICT & BEST MODEL SELECTION
+=========================================================================================================
+  � Highest Test Accuracy       : SE_Block
+  � Highest Test Macro-F1       : Conv_BN_ReLU
+  � Lowest Test Cross-Entropy   : SE_Block
+  � Smallest Overfitting Gap    : SE_Block
+  � Classes Won (Highest F1)    : {'Conv_BN_ReLU': 6, 'SE_Block': 6, 'CBAM': 3}
+---------------------------------------------------------------------------------------------------------
+  >>> OVERALL BEST MODEL: [SE_Block] (Composite Score: 70.23 | Test Acc: 72.40% | Test Macro-F1: 69.45%)
+=========================================================================================================
+
+Saved comparison charts to 'model_comparison_dashboard.png' and CSV tables to disk.
+
+>>> Extracting Best Model for Web Deployment: [SE_Block] <<<
+C:\Users\Purahan\AppData\Roaming\Python\Python314\site-packages\torch\jit\_trace.py:1000: FutureWarning: `torch.jit.trace` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+C:\Users\Purahan\AppData\Roaming\Python\Python314\site-packages\torch\jit\_trace.py:1139: FutureWarning: `torch.jit.trace_method` is not supported in Python 3.14+ and may break. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+Successfully exported deployment files to: C:\Users\Purahan\Downloads\Proccessed Dataset\deployment_bundle
+  1. TorchScript Model (Zero-Dependency) : plant_disease_model_torchscript.pt
+  2. PyTorch Checkpoint Bundle (.pth)    : plant_disease_model_checkpoint.pth
+  3. Plant & Disease Lookup Config       : deployment_config.json
+C:\Users\Purahan\AppData\Roaming\Python\Python314\site-packages\torch\jit\_serialization.py:170: FutureWarning: `torch.jit.load` is not supported in Python 3.14+ and may break. Please switch to `torch.export`.
+  warnings.warn(
+
+--- Sample Web App Prediction Output ---
+Image File           : C:\Users\Purahan\Downloads\Proccessed Dataset\Test Set\Pepper__bell___Bacterial_spot\pepper_bell_bacterial_spot1532.jpg
+Ground Truth Class   : Pepper__bell___Bacterial_spot
+{
+  "plant_name": "Pepper  Bell",
+  "is_diseased": true,
+  "health_status": "Diseased",
+  "disease_or_condition": "Bacterial Spot",
+  "confidence_pct": 84.98,
+  "raw_class_label": "Pepper__bell___Bacterial_spot",
+  "top_k_candidates": [
+    {
+      "plant": "Pepper  Bell",
+      "health_status": "Diseased",
+      "diagnosis": "Bacterial Spot",
+      "confidence_pct": 84.98
+    },
+    {
+      "plant": "Potato",
+      "health_status": "Healthy",
+      "diagnosis": "Healthy (No Disease)",
+      "confidence_pct": 2.03
+    },
+    {
+      "plant": "Tomato",
+      "health_status": "Diseased",
+      "diagnosis": "Tomato Mosaic Virus",
+      "confidence_pct": 1.63
+    }
+  ]
+}
+
+=======================================================
+ALL CELLS EXECUTED SUCCESSFULLY IN 22405.15 SECONDS (373.42 MINUTES)!
+=======================================================
+Updated Models.ipynb with all new cell outputs.
+Updated model.ipynb with all new cell outputs.
+Updated Untitled.ipynb with all new cell outputs.

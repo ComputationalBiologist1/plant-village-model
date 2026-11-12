@@ -286,7 +286,7 @@ Test F1 scores across the 36,351 unseen test partition:
 
 ## Standalone Multi-Model CLI Inference (CPU / Zero Datasets Needed)
 
-You can run predictions on any computer or laptop—**no GPU, no training dataset, and no validation/test sets required!**
+You can run predictions on any laptop
 
 The standalone script [`classify_leaf.py`](file:///Users/kushrocks6306/Deep%20Learning%20Project/classify_leaf.py) automatically loads the pre-trained weights for all 3 models from disk and runs CPU inference in under a second:
 

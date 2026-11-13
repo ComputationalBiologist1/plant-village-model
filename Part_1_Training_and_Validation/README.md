@@ -26,7 +26,7 @@ This directory contains the complete end-to-end training, validation, and benchm
 
 ## Architectural Comparison Matrix
 
-Three modern convolutional architectures based on the **ConvNeXt-Tiny** backbone were systematically trained for 50 full epochs and evaluated on an independent external test partition ($N_{\text{test}} = 36,351$ unseen images) after strict perceptual difference hash (`dHash`) deduplication. All models were trained under identical hyperparameter conditions (Cross-Entropy loss with inverse frequency class weighting, AdamW optimizer, cosine annealing learning rate scheduler down to $10^{-6}$, Mixup $\alpha=0.3$, label smoothing 0.1, batch size 64, input resolution $128 \times 128$):
+Three modern convolutional architectures based on the **ConvNeXt-Tiny** backbone were systematically trained for 50 full epochs and evaluated on an independent external test partition (N_test = 36,351 unseen images) after strict perceptual difference hash (`dHash`) deduplication. All models were trained under identical hyperparameter conditions (Cross-Entropy loss with inverse frequency class weighting, AdamW optimizer, cosine annealing learning rate scheduler down to 1e-6, Mixup alpha = 0.3, label smoothing 0.1, batch size 64, input resolution 128 x 128):
 
 | Metric | Baseline Conv-BN-ReLU | Squeeze-and-Excitation (SE-Block) | CBAM (Dual Channel + Spatial) |
 | :--- | :---: | :---: | :---: |
@@ -36,7 +36,7 @@ Three modern convolutional architectures based on the **ConvNeXt-Tiny** backbone
 | **FP16 Checkpoint Footprint** | 63.27 MB | 63.41 MB | 63.41 MB |
 | **Validation Accuracy** | 69.20% | **72.76%** | 67.61% |
 | **Validation Macro-F1** | 70.56% | 69.61% | 67.82% |
-| **Test Accuracy (Unseen $N=36,351$)** | 68.89% | **72.40%** | 67.41% |
+| **Test Accuracy (Unseen N = 36,351)** | 68.89% | **72.40%** | 67.41% |
 | **Test Recall** | 81.32% | **82.75%** | 81.50% |
 | **Test Macro-F1** | 70.53% | 69.45% | 67.64% |
 | **Test Weighted-F1** | 70.59% | **74.14%** | 71.97% |
@@ -50,7 +50,7 @@ Three modern convolutional architectures based on the **ConvNeXt-Tiny** backbone
 > [!NOTE]
 > **Understanding the Realistic 72.40% Test Accuracy vs. Conventional >99% Academic Claims:**
 > In conventional literature where PlantVillage is randomly shuffled (e.g. naive 80/20 train/test splits without deduplication), near-identical duplicate frames captured during camera burst shooting end up in both training and test partitions. Models memorize static lab backgrounds, resulting in artificially inflated benchmark scores (>99%) that completely collapse when tested on independent field imagery.
-> By contrast, this project enforced **strict zero-leakage perceptual deduplication (`dHash`)** with an independent external test partition ($N_{\text{test}} = 36,351$). The 72.40% test accuracy, 82.75% recall, and 74.14% weighted F1 reflect genuine, un-inflated generalization performance on unseen real-world leaf samples.
+> By contrast, this project enforced **strict zero-leakage perceptual deduplication (`dHash`)** with an independent external test partition (N_test = 36,351). The 72.40% test accuracy, 82.75% recall, and 74.14% weighted F1 reflect genuine, un-inflated generalization performance on unseen real-world leaf samples.
 
 ---
 

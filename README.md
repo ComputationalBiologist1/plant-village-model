@@ -21,13 +21,13 @@ This project delivers an end-to-end, industrial-grade deep learning benchmark ac
 
 > [!IMPORTANT]
 > **Strict Zero Data Leakage Guarantee:**
-> The training database is strictly derived from **PlantVillage** ($N = 15,029$), while validation and testing are strictly drawn from an **independent external superset** ($N_{\text{val}} = 36,356$, $N_{\text{test}} = 36,351$). All cross-dataset visual duplicates were purged using **perceptual hashing (`phash` and `dhash`)**, ensuring unbiased generalization evaluation.
+> The training database is strictly derived from **PlantVillage** (N = 15,029), while validation and testing are strictly drawn from an **independent external superset** (N_val = 36,356, N_test = 36,351). All cross-dataset visual duplicates were purged using **perceptual hashing (`phash` and `dhash`)**, ensuring unbiased generalization evaluation.
 
 ---
 
 ## Multi-Model Benchmark Verdict
 
-All models were trained for **50 full epochs** on an **NVIDIA GeForce RTX 4050 Laptop GPU** using **FP16 Mixed Precision (AMP)**, **Cosine Annealing** down to $10^{-6}$, **Mixup augmentation**, **Label Smoothing**, and **AdamW differential learning rates**.
+All models were trained for **50 full epochs** on an **NVIDIA GeForce RTX 4050 Laptop GPU** using **FP16 Mixed Precision (AMP)**, **Cosine Annealing** down to 1e-6, **Mixup augmentation**, **Label Smoothing**, and **AdamW differential learning rates**.
 
 | Architecture | Val Acc (%) | Val Macro-F1 (%) | Test Acc (%) | Test Recall (%) | Test Macro-F1 (%) | Test Weighted-F1 (%) | Test Loss | Composite Score | Benchmark Verdict |
 |---|---|---|---|---|---|---|---|---|---|
@@ -45,7 +45,7 @@ Score = 0.40*(Test Macro-F1) + 0.25*(Test Acc) + 0.20*(Test Weighted-F1) + 0.15*
 1. **Superior Test Accuracy (72.40%) & Recall (82.75%):** Correctly classified the highest proportion of diseased foliage across 36,351 unseen test images with the lowest test loss (1.3223).
 2. **Near-Zero Generalization Gap (0.36%):** Scored 72.76% on Validation and 72.40% on Test, demonstrating stability against distribution shift.
 3. **Minimal Train-Val Overfitting Gap (3.53%):** Compared to `Conv_BN_ReLU` which overfit by 13.95% on training data, SE attention acted as a regularizer.
-4. **Spatial Invariance over Small Feature Grids:** At Stage 4 ($128\times 128 \rightarrow 4\times 4$ spatial resolution), CBAM's $7\times 7$ spatial kernel with padding 3 introduced severe border-padding artifacts. SE-Block operates purely across channel descriptors ($768 \rightarrow 48 \rightarrow 768$), making it scale-invariant and immune to spatial distortion.
+4. **Spatial Invariance over Small Feature Grids:** At Stage 4 (128x128 to 4x4 spatial resolution), CBAM's 7x7 spatial kernel with padding 3 introduced severe border-padding artifacts. SE-Block operates purely across channel descriptors (768 -> 48 -> 768), making it scale-invariant and immune to spatial distortion.
 
 ---
 
@@ -188,8 +188,8 @@ launch.bat
 
 ### Why ConvNeXt-Tiny?
 ConvNeXt modernizes classical convolutional networks by incorporating architectural innovations from Vision Transformers (ViTs):
-- **Depthwise Separable Convolutions:** $7\times 7$ depthwise kernels match the receptive field of Swin Transformers.
-- **Inverted Bottleneck Design:** Hidden dimensions are expanded by $4\times$ in the MLP block ($768 \rightarrow 3072 \rightarrow 768$).
+- **Depthwise Separable Convolutions:** 7x7 depthwise kernels match the receptive field of Swin Transformers.
+- **Inverted Bottleneck Design:** Hidden dimensions are expanded by 4x in the MLP block (768 -> 3072 -> 768).
 - **Fewer Activation & Normalization Layers:** Replaces frequent BatchNorm with LayerNorm, and uses GELU instead of ReLU.
 
 ### Model Comparison & Attention Mechanics:
@@ -227,15 +227,19 @@ ConvNeXt modernizes classical convolutional networks by incorporating architectu
 ```
 
 #### 1. Model 1: `Conv_BN_ReLU`
-Adds an explicit $3\times 3$ convolutional residual block post-backbone. While achieving strong training accuracy, it suffered from a **13.95% train-validation gap**, indicating feature memorization rather than generalized abstraction.
+Adds an explicit 3x3 convolutional residual block post-backbone. While achieving strong training accuracy, it suffered from a **13.95% train-validation gap**, indicating feature memorization rather than generalized abstraction.
 
 #### 2. Model 2: `SE_Block` (Squeeze-and-Excitation Attention) — Champion / Selected
-Applies channel-wise attention via global average pooling and a bottleneck MLP ($768 \rightarrow 48 \rightarrow 768$):
-$$\mathbf{s} = \sigma\left(\mathbf{W}_2 \cdot \text{ReLU}\left(\mathbf{W}_1 \cdot \text{GAP}(\mathbf{X})\right)\right)$$
+Applies channel-wise attention via global average pooling and a bottleneck MLP (768 -> 48 -> 768):
+
+```text
+s = σ(W₂ · ReLU(W₁ · GAP(X)))
+```
+
 This enables the network to dynamically emphasize pathological channels (e.g., fungal chlorosis or necrosis signatures) while attenuating background leaf textures.
 
 #### 3. Model 3: `CBAM` (Convolutional Block Attention Module)
-Combines channel attention with spatial attention via a $7\times 7$ convolution. Because Stage 4 features are already reduced to $4\times 4$ spatial resolution, applying a $7\times 7$ kernel with padding 3 degraded spatial coherence, resulting in lower test accuracy (67.41%).
+Combines channel attention with spatial attention via a 7x7 convolution. Because Stage 4 features are already reduced to 4x4 spatial resolution, applying a 7x7 kernel with padding 3 degraded spatial coherence, resulting in lower test accuracy (67.41%).
 
 ---
 
@@ -255,8 +259,8 @@ NORM_STD  = [0.1878, 0.1648, 0.2032]  # R, G, B channel standard deviations
 ```
 
 ### 3. Biophysical Marker Distributions:
-- **Healthy Foliage:** High Excess Green Index ($2G - R - B > 0.18$), low chlorosis ratio ($R/G < 0.72$), high photometric homogeneity.
-- **Necrotic Lesions (e.g., Late Blight, Early Blight):** Significant shift in the red-to-green ratio ($R/G > 1.15$) and high spatial color entropy ($H > 6.4$ bits).
+- **Healthy Foliage:** High Excess Green Index (2G - R - B > 0.18), low chlorosis ratio (R/G < 0.72), high photometric homogeneity.
+- **Necrotic Lesions (e.g., Late Blight, Early Blight):** Significant shift in the red-to-green ratio (R/G > 1.15) and high spatial color entropy (H > 6.4 bits).
 
 ---
 

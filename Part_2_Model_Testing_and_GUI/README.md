@@ -57,7 +57,7 @@ The recommendations are systematically indexed from three established agronomic 
 3. **EPPO & University Extension IPM Guidelines**:
    - Sanitation thresholds, thermal seed therapy (e.g., 50°C for 25 minutes for *Xanthomonas*), and non-solanaceous crop rotations (2-to-3 years) are compiled from peer-reviewed agricultural extension guidelines (UC Davis IPM, Cornell Cooperative Extension, Penn State Plant Pathology).
 
-When a specimen is diagnosed, the workstation maps the predicted class index to its verified clinical record in $O(1)$ constant time, ensuring reproducible, lab-grade advice with zero network dependencies.
+When a specimen is diagnosed, the workstation maps the predicted class index to its verified clinical record in O(1) constant time, ensuring reproducible, lab-grade advice with zero network dependencies.
 
 ### Launching the Desktop Workstation
 
